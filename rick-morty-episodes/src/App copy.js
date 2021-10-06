@@ -1,5 +1,5 @@
 import "./App.css";
-
+import Data from "./utils/Data";
 import { PARAM as config } from "./utils/appConfig";
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MainContainer from "./components/MainContainer";
+import CardBox from "./components/CardBox";
+import CardList from "./components/CardList";
 
 export default class App extends Component {
 	render() {
@@ -23,7 +25,6 @@ export default class App extends Component {
 							render={(routeProps) => (
 								<>
 									<MainContainer
-										{...obj}
 										{...routeProps}
 										relPath={obj.apiPartialURI}
 										pageDesc={obj.description}
@@ -32,6 +33,9 @@ export default class App extends Component {
 							)}
 						/>
 					))}
+					<Route>
+						<Data {...{ relPath: "/episode" }} />
+					</Route>
 				</Router>
 				<Footer />
 			</div>

@@ -9,6 +9,7 @@ import getData from "../utils/getData";
 // del estilo: si la key matchea con nombre que me de el value y asi para
 // vonstruir las cards
 
+//*TODO ver si es modelist={modelist} o no
 export default class CardBox extends Component {
 	constructor(props) {
 		super(props);
@@ -33,7 +34,7 @@ export default class CardBox extends Component {
 
 	render() {
 		const { single, all, next, pages } = this.state;
-		console.log("prueba", single, all, next, pages);
+		const { modelist } = this.props;
 		return (
 			<div>
 				<Card style={{ width: "18rem" }}>
@@ -44,7 +45,8 @@ export default class CardBox extends Component {
 							Some quick example text to build on the card title and make up the
 							bulk of the card's content.
 						</Card.Text>
-						<Card.Link href="#">Card Link</Card.Link>
+						<Card.Link href="#">Card Link</Card.Link> //va al episodio. Usar de
+						titulo.
 					</Card.Body>
 				</Card>
 				<h3>

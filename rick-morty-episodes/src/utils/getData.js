@@ -25,6 +25,6 @@ export default async function getData(relPath) {
 		console.log("im the result", result);
 		return result;
 	} catch (error) {
-		console.log("error");
+		console.log(error.response, "error");
 	}
 }

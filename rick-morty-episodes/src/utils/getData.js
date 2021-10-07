@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function getData(relPath) {
+export default async function getData(relpath) {
 	console.log("doing the axios");
 	try {
 		let result = {
@@ -14,7 +14,7 @@ export default async function getData(relPath) {
 			baseURL: "https://rickandmortyapi.com/api",
 		});
 
-		const response = await client.get(relPath); //obj
+		const response = await client.get(relpath); //obj
 		response.data.results
 			? (result = {
 					all: response.data.results,

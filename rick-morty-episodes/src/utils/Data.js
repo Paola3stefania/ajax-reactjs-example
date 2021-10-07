@@ -18,9 +18,9 @@ export default class Data extends Component {
 		});
 
 		try {
-			const { relPath } = this.props;
+			const { relpath } = this.props;
 
-			const response = await client.get(relPath); //obj
+			const response = await client.get(relpath); //obj
 			response.data.results
 				? this.setState({
 						all: response.data.results,

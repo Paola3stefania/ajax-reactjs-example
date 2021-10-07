@@ -1,22 +1,21 @@
 import React, { Component } from "react";
-import Data from "../utils/Data";
+
 import MainPag from "./MainPag";
 import Section from "./Section";
 
+//	<Data relpath={relpath} />
 export default class MainContainer extends Component {
 	render() {
-		const { relPath, top, bottom } = this.props;
+		const { relpath, top, bottom, pageKey } = this.props;
 		return (
 			<main>
 				<h1>Im the Main Container</h1>
 				------- SECTION TOP -------------
-				<Section relPath={relPath} {...top} />
+				<Section relpath={relpath} pageKey={pageKey} {...top} />
 				------- SECTION BOTTOM -----------
-				<Section relPath={relPath} {...bottom} />
+				<Section relpath={relpath} pageKey={pageKey} {...bottom} />
 				-------- MAINPAG ----------------
 				<MainPag />
-				------------------------ PRUEBA -------------
-				<Data relPath={relPath} />
 			</main>
 		);
 	}

@@ -25,8 +25,7 @@ export default class App extends Component {
 									<MainContainer
 										{...obj}
 										{...routeProps}
-										relPath={obj.apiPartialURI}
-										pageDesc={obj.description}
+										relpath={obj.apiPartialURI}
 									/>
 								</>
 							)}

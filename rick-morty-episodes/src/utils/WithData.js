@@ -6,11 +6,10 @@ function WithData(ComponenteNuevo) {
 		constructor(props) {
 			super(props);
 			this.state = {
-				single: { state: "loading single" },
-				all: [{ state: "loading list" }],
+				single: {},
+				all: [],
 				pages: 0,
 				next: null,
-
 				hasloaded: false,
 			};
 		}
@@ -43,6 +42,7 @@ function WithData(ComponenteNuevo) {
 		};
 
 		render() {
+			console.log("renderizo with data");
 			const { single, all, pages, next, hasloaded } = this.state;
 			if (!hasloaded) {
 				this.getData();

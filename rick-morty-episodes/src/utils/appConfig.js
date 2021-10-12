@@ -27,7 +27,12 @@ export const PARAM = [
 			modelist: false,
 			params: ["id", "name"],
 		},
-		bottom: { hasCardList: true, modelist: true, params: ["id", "name"] },
+		bottom: {
+			hasCardList: true,
+			modelist: true,
+			filter: "character",
+			params: ["id", "name"],
+		},
 		path: "/episode/:id",
 		apiPartialURI: "/episode/1",
 	},
@@ -60,7 +65,7 @@ export const PARAM = [
 		},
 		bottom: { hasCardList: true, modelist: true, params: ["id", "name"] },
 		path: "/location/:id",
-		apiPartialURI: "/location/",
+		apiPartialURI: "/location/1",
 	},
 	{
 		id: 4,

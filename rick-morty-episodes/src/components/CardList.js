@@ -10,7 +10,6 @@ class CardList extends Component {
 		console.log(`Obteniendo ${pages} paginas , next is ${next}, y el pathURI es ${relpath},
 		y params son ${params} y ala name ${name}`);
 
-		console.log(all);
 		all.push(single);
 		console.log("soy todo lo q hay q renerizar", all);
 

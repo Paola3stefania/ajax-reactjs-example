@@ -3,7 +3,7 @@ import CardList from "./CardList";
 
 export default class Section extends Component {
 	render() {
-		const { relpath, hasCardList, image, modelist, pageKey, params } =
+		const { relpath, hasCardList, image, modelist, pageKey, params, name } =
 			this.props;
 		return (
 			<div>
@@ -14,6 +14,7 @@ export default class Section extends Component {
 						relpath={relpath}
 						pageKey={pageKey}
 						params={params}
+						name={name}
 					/>
 				)}
 			</div>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import WithData from "../utils/WithData";
 
 import MainPag from "./MainPag";
 import Section from "./Section";
@@ -7,14 +6,26 @@ import Section from "./Section";
 //	<Data relpath={relpath} />
 class MainContainer extends Component {
 	render() {
-		const { relpath, top, bottom, pageKey, name } = this.props;
+		const { baseURL, relpath, top, bottom, pageKey, name } = this.props;
 		return (
 			<main>
 				<h1>{name}</h1>
 
-				<Section relpath={relpath} pageKey={pageKey} name={name} {...top} />
+				<Section
+					baseURL={baseURL}
+					relpath={relpath}
+					pageKey={pageKey}
+					name={name}
+					{...top}
+				/>
 
-				<Section relpath={relpath} pageKey={pageKey} name={name} {...bottom} />
+				<Section
+					baseURL={baseURL}
+					relpath={relpath}
+					pageKey={pageKey}
+					name={name}
+					{...bottom}
+				/>
 
 				<MainPag />
 			</main>
@@ -22,4 +33,4 @@ class MainContainer extends Component {
 	}
 }
 
-export default new WithData(MainContainer);
+export default MainContainer;

@@ -1,45 +1,18 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
-import getData from "../utils/getData";
 import { NavLink } from "react-router-dom";
-export default class CardList extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			all: [],
-			single: {},
-			next: null,
-			pages: 0,
-			image: false,
-			modelist: false,
-			name: "",
-			relpath: "/",
-			params: [],
-		};
-	}
-
-	async componentDidMount() {
-		const { relpath, modelist, image, params, name } = this.props;
-		const result = await getData(relpath);
-
-		this.setState({
-			modelist: modelist,
-			relpath: relpath,
-			params: params,
-			image: image,
-			name: name,
-			...result,
-		});
-	}
-
+import WithData from "../utils/WithData";
+class CardList extends Component {
 	render() {
-		const { single, all, next, pages, relpath, params, image } = this.state;
-
-		all.push(single);
-		console.log("sy todo lo q hay q renerizar", all);
+		const { single, all, next, pages, relpath, params, image, name } =
+			this.props;
 
 		console.log(`Obteniendo ${pages} paginas , next is ${next}, y el pathURI es ${relpath},
-		y params son ${params}`);
+		y params son ${params} y ala name ${name}`);
+
+		console.log(all);
+		all.push(single);
+		console.log("soy todo lo q hay q renerizar", all);
 
 		return (
 			<>
@@ -78,3 +51,5 @@ export default class CardList extends Component {
 		);
 	}
 }
+
+export default WithData(CardList);

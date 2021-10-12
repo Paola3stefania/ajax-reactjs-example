@@ -1,10 +1,20 @@
 import React, { Component } from "react";
+
 import CardList from "./CardList";
 
-export default class Section extends Component {
+class Section extends Component {
 	render() {
-		const { relpath, hasCardList, image, modelist, pageKey, params, name } =
-			this.props;
+		const {
+			baseURL,
+			relpath,
+			hasCardList,
+			image,
+			modelist,
+			pageKey,
+			params,
+			name,
+		} = this.props;
+
 		return (
 			<div>
 				{hasCardList && (
@@ -15,9 +25,12 @@ export default class Section extends Component {
 						pageKey={pageKey}
 						params={params}
 						name={name}
+						baseURL={baseURL}
 					/>
 				)}
 			</div>
 		);
 	}
 }
+
+export default Section;

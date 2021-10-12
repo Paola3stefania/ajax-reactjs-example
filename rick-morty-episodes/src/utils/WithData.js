@@ -6,14 +6,16 @@ function WithData(ComponenteNuevo) {
 		constructor(props) {
 			super(props);
 			this.state = {
-				single: {},
-				all: [],
+				single: { state: "loading single" },
+				all: [{ state: "loading list" }],
 				pages: 0,
 				next: null,
+
+				hasloaded: false,
 			};
 		}
 
-		async componentDidMount() {
+		getData = async () => {
 			try {
 				const { baseURL, relpath } = this.props;
 
@@ -22,20 +24,40 @@ function WithData(ComponenteNuevo) {
 				});
 
 				const response = await client.get(relpath); //obj
+				console.log("soy la respuesta", response);
+
 				response.data.results
 					? this.setState({
 							all: response.data.results,
 							pages: response.data.info.pages,
 							next: response.data.info.next,
+							hasloaded: true,
 					  })
 					: this.setState({
 							single: response.data,
+							hasloaded: true,
 					  });
-			} catch (error) {}
-		}
+			} catch (error) {
+				console.log(error);
+			}
+		};
 
 		render() {
-			return <ComponenteNuevo {...this.props} {...this.state} />;
+			const { single, all, pages, next, hasloaded } = this.state;
+			if (!hasloaded) {
+				this.getData();
+			}
+
+			console.log(this.props, this.state, "soy el HOC");
+			return (
+				<ComponenteNuevo
+					{...this.props}
+					single={single}
+					all={all}
+					pages={pages}
+					next={next}
+				/>
+			);
 		}
 	}
 	return NewComponent;

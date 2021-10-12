@@ -23,17 +23,20 @@ function WithData(ComponenteNuevo) {
 				});
 
 				const response = await client.get(relpath); //obj
-				console.log("soy la respuesta", response);
 
 				response.data.results
 					? this.setState({
 							all: response.data.results,
 							pages: response.data.info.pages,
 							next: response.data.info.next,
+							single: {},
 							hasloaded: true,
 					  })
 					: this.setState({
 							single: response.data,
+							all: [],
+							pages: 0,
+							next: null,
 							hasloaded: true,
 					  });
 			} catch (error) {
@@ -42,13 +45,11 @@ function WithData(ComponenteNuevo) {
 		};
 
 		render() {
-			console.log("renderizo with data");
 			const { single, all, pages, next, hasloaded } = this.state;
 			if (!hasloaded) {
 				this.getData();
 			}
 
-			console.log(this.props, this.state, "soy el HOC");
 			return (
 				<ComponenteNuevo
 					{...this.props}

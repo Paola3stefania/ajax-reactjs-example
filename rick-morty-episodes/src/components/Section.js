@@ -4,27 +4,18 @@ import CardList from "./CardList";
 
 class Section extends Component {
 	render() {
-		const {
-			baseURL,
-			relpath,
-			hasCardList,
-			image,
-			modelist,
-			pageKey,
-			params,
-			name,
-		} = this.props;
+		const { baseURL, relpath, hasCardList, title, image, modelist, params } =
+			this.props;
 
 		return (
 			<div>
 				{hasCardList && (
 					<CardList
 						image={image}
+						title={title}
 						modelist={modelist}
 						relpath={relpath}
-						pageKey={pageKey}
 						params={params}
-						name={name}
 						baseURL={baseURL}
 					/>
 				)}

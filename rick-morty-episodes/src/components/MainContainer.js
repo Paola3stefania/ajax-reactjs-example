@@ -8,7 +8,7 @@ class MainContainer extends Component {
 		const { baseURL, relpath, top, bottom, name, match } = this.props;
 		return (
 			<main>
-				<h1>{name}</h1>
+				<h1 className="text-center">{name}</h1>
 
 				{top && (
 					<Section baseURL={baseURL} relpath={relpath} {...top} match={match} />

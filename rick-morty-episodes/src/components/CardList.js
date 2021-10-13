@@ -11,7 +11,7 @@ class CardList extends Component {
 		return (
 			<>
 				{
-					<div className="d-flex flex-wrap">
+					<div className="d-flex flex-wrap justify-content-center">
 						{all.map((obj) => (
 							<Card style={{ width: "18rem" }} key={`single_card_${obj["id"]}`}>
 								{image && <Card.Img variant="top" src={`${obj["image"]}`} />}

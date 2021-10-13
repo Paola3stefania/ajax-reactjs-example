@@ -4,7 +4,7 @@ import Pagination from "react-bootstrap/Pagination";
 export default class MainPag extends Component {
 	render() {
 		return (
-			<nav>
+			<nav className="d-flex justify-content-center">
 				<Pagination>
 					<Pagination.First disabled />
 					<Pagination.Prev disabled />

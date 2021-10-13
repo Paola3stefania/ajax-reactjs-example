@@ -41,17 +41,17 @@ class CardList extends Component {
 													{typeof obj[key] !== "object"
 														? obj[key]
 														: Object.values(obj[key]).map((newKey) =>
-																params.includes("linkeable") ? (
-																	<Link
-																		key={`navlink_card_${newKey}`}
-																		className="card-link"
-																		to={newKey.split(baseURL)[1]}
-																	>
-																		{newKey.split(baseURL)[1]}
-																	</Link>
-																) : (
-																	newKey
-																)
+																params.includes("linkeable")
+																	? newKey && (
+																			<Link
+																				key={`navlink_card_${newKey}`}
+																				className="card-link"
+																				to={newKey.split(baseURL)[1]}
+																			>
+																				{newKey.split(baseURL)[1]}
+																			</Link>
+																	  )
+																	: newKey
 														  )}
 												</Card.Text>
 											</>

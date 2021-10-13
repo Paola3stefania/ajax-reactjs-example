@@ -6,7 +6,6 @@ export const PARAM = [
 		pageKey: "home",
 		name: "Home Page",
 		description: "Displays Episode List",
-		top: {},
 		bottom: {
 			hasCardList: true,
 			modelist: true,
@@ -44,7 +43,6 @@ export const PARAM = [
 		pageKey: "location-list",
 		name: "All Locations Page",
 		description: "Displays Location List",
-		top: {},
 		bottom: {
 			modelist: true,
 			hasCardList: true,
@@ -82,7 +80,6 @@ export const PARAM = [
 		pageKey: "character-list",
 		name: "All Characters Page",
 		description: "Displays Characters List",
-		top: {},
 		bottom: {
 			modelist: true,
 			image: true,

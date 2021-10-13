@@ -16,7 +16,7 @@ class Section extends Component {
 		} = this.props;
 
 		return (
-			<div>
+			<div className="d-flex justify-content-center">
 				{hasCardList && (
 					<CardList
 						image={image}

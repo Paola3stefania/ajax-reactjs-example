@@ -23,7 +23,6 @@ function WithData(ComponenteNuevo) {
 				});
 
 				let fullrelpath;
-				console.log(match.params.id);
 
 				match.params.id
 					? (fullrelpath = `${relpath}${match.params.id}`)

@@ -14,7 +14,6 @@ function WithData(ComponenteNuevo) {
 			};
 		}
 
-		// sacar params del id de la ruta de arriba
 		getData = async () => {
 			try {
 				const { baseURL, relpath, match } = this.props;
@@ -48,7 +47,7 @@ function WithData(ComponenteNuevo) {
 							hasloaded: true,
 					  });
 			} catch (error) {
-				console.log(error);
+				console.log(error.response, "error");
 			}
 		};
 

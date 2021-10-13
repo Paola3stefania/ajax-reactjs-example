@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
-import WithData from "../utils/WithData";
+import WithData from "./WithData";
 
 class CardList extends Component {
 	render() {

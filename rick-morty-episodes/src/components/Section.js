@@ -4,8 +4,16 @@ import CardList from "./CardList";
 
 class Section extends Component {
 	render() {
-		const { baseURL, relpath, hasCardList, title, image, modelist, params } =
-			this.props;
+		const {
+			baseURL,
+			relpath,
+			hasCardList,
+			title,
+			image,
+			modelist,
+			match,
+			params,
+		} = this.props;
 
 		return (
 			<div>
@@ -17,6 +25,7 @@ class Section extends Component {
 						relpath={relpath}
 						params={params}
 						baseURL={baseURL}
+						match={match}
 					/>
 				)}
 			</div>

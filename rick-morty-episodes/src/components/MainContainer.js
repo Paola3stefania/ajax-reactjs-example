@@ -6,14 +6,19 @@ import Section from "./Section";
 //	<Data relpath={relpath} />
 class MainContainer extends Component {
 	render() {
-		const { baseURL, relpath, top, bottom, name } = this.props;
+		const { baseURL, relpath, top, bottom, name, match } = this.props;
 		return (
 			<main>
 				<h1>{name}</h1>
 
-				<Section baseURL={baseURL} relpath={relpath} {...top} />
+				<Section baseURL={baseURL} relpath={relpath} {...top} match={match} />
 
-				<Section baseURL={baseURL} relpath={relpath} {...bottom} />
+				<Section
+					baseURL={baseURL}
+					relpath={relpath}
+					{...bottom}
+					match={match}
+				/>
 
 				<MainPag />
 			</main>

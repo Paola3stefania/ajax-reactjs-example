@@ -1,0 +1,20 @@
+{
+  "name": "ajax-reactjs-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paola3stefania/ajax-reactjs-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paola3stefania/ajax-reactjs-example/issues"
+  },
+  "homepage": "https://github.com/Paola3stefania/ajax-reactjs-example#readme"
+}

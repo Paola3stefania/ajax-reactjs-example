@@ -37,7 +37,7 @@ export const PARAM = [
 			params: ["id", "name"],
 		},
 		path: "/episode/:id",
-		apiPartialURI: "/episode/1",
+		apiPartialURI: "/episode/",
 	},
 	{
 		id: 2,
@@ -76,7 +76,7 @@ export const PARAM = [
 			params: ["id", "name", "linkeable"],
 		},
 		path: "/location/:id",
-		apiPartialURI: "/location/1",
+		apiPartialURI: "/location/",
 	},
 	{
 		id: 4,
@@ -122,7 +122,7 @@ export const PARAM = [
 			params: ["episode"],
 		},
 		path: "/character/:id",
-		apiPartialURI: "/character/1",
+		apiPartialURI: "/character/",
 	},
 ];
 

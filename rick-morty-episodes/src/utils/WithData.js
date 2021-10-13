@@ -14,15 +14,23 @@ function WithData(ComponenteNuevo) {
 			};
 		}
 
+		// sacar params del id de la ruta de arriba
 		getData = async () => {
 			try {
-				const { baseURL, relpath } = this.props;
+				const { baseURL, relpath, match } = this.props;
 
 				const client = axios.create({
 					baseURL: baseURL,
 				});
 
-				const response = await client.get(relpath); //obj
+				let fullrelpath;
+				console.log(match.params.id);
+
+				match.params.id
+					? (fullrelpath = `${relpath}${match.params.id}`)
+					: (fullrelpath = relpath);
+
+				const response = await client.get(fullrelpath); //obj
 
 				response.data.results
 					? this.setState({

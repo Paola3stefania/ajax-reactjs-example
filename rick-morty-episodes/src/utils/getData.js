@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function getData(relpath) {
+export default async function getData(fullpath) {
 	try {
 		let result = {
 			all: [],
@@ -10,12 +10,12 @@ export default async function getData(relpath) {
 		};
 
 		const client = axios.create({
-			baseURL: "https://rickandmortyapi.com/api",
+			url: fullpath,
 		});
 
-		console.log("Getting data from API in: ", relpath);
+		console.log("Getting data from API in: ", fullpath);
 
-		const response = await client.get(relpath); //obj
+		const response = await client.get(); //obj
 		response.data.results
 			? (result = {
 					all: response.data.results,

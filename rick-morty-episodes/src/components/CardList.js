@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Card } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import WithData from "../utils/WithData";
+
 class CardList extends Component {
 	render() {
-		const { single, all, relpath, params, image, title } = this.props;
+		const { single, all, relpath, params, image, title, baseURL } = this.props;
 		all.push(single);
 
 		return (
@@ -39,7 +40,19 @@ class CardList extends Component {
 													{key}:
 													{typeof obj[key] !== "object"
 														? obj[key]
-														: Object.values(obj[key]).map((newKey) => newKey)}
+														: Object.values(obj[key]).map((newKey) =>
+																params.includes("linkeable") ? (
+																	<Link
+																		key={`navlink_card_${newKey}`}
+																		className="card-link"
+																		to={newKey.split(baseURL)[1]}
+																	>
+																		{newKey.split(baseURL)[1]}
+																	</Link>
+																) : (
+																	newKey
+																)
+														  )}
 												</Card.Text>
 											</>
 										))}

@@ -107,8 +107,8 @@ export const PARAM = [
 		top: {
 			hasCardList: true,
 			image: true,
-			title: true,
-			params: ["id", "name"],
+			title: false,
+			params: ["name", "status", "species", "gender", "origin", "linkeable"],
 		},
 		bottom: {
 			hasCardList: true,
